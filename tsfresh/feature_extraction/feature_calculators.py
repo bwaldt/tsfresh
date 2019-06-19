@@ -28,8 +28,11 @@ from scipy.stats import linregress
 from statsmodels.tools.sm_exceptions import MissingDataError
 from statsmodels.tsa.ar_model import AR
 from statsmodels.tsa.stattools import acf, adfuller, pacf
-import cmsisdsp as dsp
-
+try:
+   import cmsisdsp as dsp
+except:
+   print('Please install cmsis-dsp library to use ARM feature Calculations')
+   
 # todo: make sure '_' works in parameter names in all cases, add a warning if not
 
 
