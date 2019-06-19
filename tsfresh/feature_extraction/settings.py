@@ -234,3 +234,38 @@ class TimeBasedFCParameters(ComprehensiveFCParameters):
         for fname, f in feature_calculators.__dict__.items():
             if fname in self and getattr(f, "index_type", False) != pd.DatetimeIndex:
                 del self[fname]
+
+
+
+class ArmFCParameters(ComprehensiveFCParameters):
+    """
+    This will only calculate the ARM set
+
+    Use this class for quick tests of your setup before calculating all
+    features which could take some time depending of your data set size.
+
+    You should use this object when calling the extract function, like so:
+
+    >>> from tsfresh.feature_extraction import extract_features, ArmFCParameters
+    >>> extract_features(df, default_fc_parameters=ArmFCParameters())
+    """
+
+    def __init__(self):
+        ComprehensiveFCParameters.__init__(self)
+
+        for fname, f in feature_calculators.__dict__.items():
+            if fname in self and (not hasattr(f, "arm") or not getattr(f, "arm")):
+                del self[fname]
+
+
+
+
+
+
+
+
+
+
+
+
+

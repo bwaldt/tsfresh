@@ -28,6 +28,7 @@ from scipy.stats import linregress
 from statsmodels.tools.sm_exceptions import MissingDataError
 from statsmodels.tsa.ar_model import AR
 from statsmodels.tsa.stattools import acf, adfuller, pacf
+import cmsisdsp as dsp
 
 # todo: make sure '_' works in parameter names in all cases, add a warning if not
 
@@ -177,6 +178,104 @@ def set_property(key, value):
             func.__doc__ = func.__doc__ + "\n\n    *This function is of type: " + value + "*\n"
         return func
     return decorate_func
+
+
+'''
+Starting implementation of ARM function
+'''
+
+@set_property("fctype", "simple")
+@set_property("arm", True)
+def arm_std_q15(x):
+    """
+    arm std at q15.
+    NOTE: this calculates sample std dev rather than population std dev
+
+    :param x: the time series to calculate the feature of
+    :type x: pandas.Series
+    :return: the value of this feature
+    :return type: int
+    """
+    return dsp.arm_std_q15(x)
+
+
+@set_property("fctype", "simple")
+@set_property("arm", True)
+def arm_min_q15(x):
+    """
+
+    :param x: the time series to calculate the feature of
+    :type x: pandas.Series
+    :return: the value of this feature
+    :return type: int
+    """
+    return dsp.arm_min_q15(x)
+
+
+@set_property("fctype", "simple")
+@set_property("arm", True)
+def arm_max_q15(x):
+    """
+
+    :param x: the time series to calculate the feature of
+    :type x: pandas.Series
+    :return: the value of this feature
+    :return type: int
+    """
+    return dsp.arm_max_q15(x)
+
+
+@set_property("fctype", "simple")
+@set_property("arm", True)
+def arm_power_q15(x):
+    """
+
+    :param x: the time series to calculate the feature of
+    :type x: pandas.Series
+    :return: the value of this feature
+    :return type: int
+    """
+    return dsp.arm_power_q15(x)
+
+
+@set_property("fctype", "simple")
+@set_property("arm", True)
+def arm_rms_q15(x):
+    """
+
+    :param x: the time series to calculate the feature of
+    :type x: pandas.Series
+    :return: the value of this feature
+    :return type: int
+    """
+    return dsp.arm_rms_q15(x)
+
+
+@set_property("fctype", "simple")
+@set_property("arm", True)
+def arm_var_q15(x):
+    """
+
+    :param x: the time series to calculate the feature of
+    :type x: pandas.Series
+    :return: the value of this feature
+    :return type: int
+    """
+    return dsp.arm_var_q15(x)
+
+
+@set_property("fctype", "simple")
+@set_property("arm", True)
+def arm_mean_q15(x):
+    """
+
+    :param x: the time series to calculate the feature of
+    :type x: pandas.Series
+    :return: the value of this feature
+    :return type: int
+    """
+    return dsp.arm_mean_q15(x)
+
 
 
 @set_property("fctype", "simple")
