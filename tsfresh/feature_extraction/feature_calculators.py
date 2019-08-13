@@ -187,19 +187,19 @@ def set_property(key, value):
 Starting implementation of ARM function
 '''
 
-# @set_property("fctype", "simple")
-# @set_property("arm", True)
-# def arm_std_q15(x):
-#     """
-#     arm std at q15.
-#     NOTE: this calculates sample std dev rather than population std dev
-#
-#     :param x: the time series to calculate the feature of
-#     :type x: pandas.Series
-#     :return: the value of this feature
-#     :return type: int
-#     """
-#     return dsp.arm_std_q15(x)
+@set_property("fctype", "simple")
+@set_property("arm", True)
+def arm_std_q15(x):
+    """
+    arm std at q15.
+    NOTE: this calculates sample std dev rather than population std dev
+
+    :param x: the time series to calculate the feature of
+    :type x: pandas.Series
+    :return: the value of this feature
+    :return type: int
+    """
+    return dsp.arm_std_q15(x)
 
 
 @set_property("fctype", "simple")
