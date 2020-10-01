@@ -598,6 +598,7 @@ def abs_energy(x):
 
 
 @set_property("fctype", "simple")
+@set_property("arm", True)
 def cid_ce(x, normalize):
     """
     This function calculator is an estimate for a time series complexity [1] (A more complex time series has more peaks,
@@ -635,6 +636,7 @@ def cid_ce(x, normalize):
 
 
 @set_property("fctype", "simple")
+@set_property("arm", True)
 def mean_abs_change(x):
     """
     Returns the mean over the absolute differences between subsequent time series values which is
@@ -670,6 +672,7 @@ def mean_change(x):
 
 
 @set_property("fctype", "simple")
+@set_property("arm", True)
 def mean_second_derivative_central(x):
     """
     Returns the mean value of a central approximation of the second derivative
@@ -690,6 +693,7 @@ def mean_second_derivative_central(x):
 
 @set_property("fctype", "simple")
 @set_property("minimal", True)
+@set_property("arm", True)
 def median(x):
     """
     Returns the median of x
@@ -759,6 +763,7 @@ def variance(x):
 
 
 @set_property("fctype", "simple")
+@set_property("arm", True)
 def skewness(x):
     """
     Returns the sample skewness of x (calculated with the adjusted Fisher-Pearson standardized
@@ -775,6 +780,7 @@ def skewness(x):
 
 
 @set_property("fctype", "simple")
+@set_property("arm", True)
 def kurtosis(x):
     """
     Returns the kurtosis of x (calculated with the adjusted Fisher-Pearson standardized
@@ -808,6 +814,7 @@ def absolute_sum_of_changes(x):
 
 
 @set_property("fctype", "simple")
+@set_property("arm", True)
 def longest_strike_below_mean(x):
     """
     Returns the length of the longest consecutive subsequence in x that is smaller than the mean of x
@@ -823,6 +830,7 @@ def longest_strike_below_mean(x):
 
 
 @set_property("fctype", "simple")
+@set_property("arm", True)
 def longest_strike_above_mean(x):
     """
     Returns the length of the longest consecutive subsequence in x that is bigger than the mean of x
@@ -838,6 +846,7 @@ def longest_strike_above_mean(x):
 
 
 @set_property("fctype", "simple")
+@set_property("arm", True)
 def count_above_mean(x):
     """
     Returns the number of values in x that are higher than the mean of x
@@ -852,6 +861,7 @@ def count_above_mean(x):
 
 
 @set_property("fctype", "simple")
+@set_property("arm", True)
 def count_below_mean(x):
     """
     Returns the number of values in x that are lower than the mean of x
@@ -881,6 +891,7 @@ def last_location_of_maximum(x):
 
 
 @set_property("fctype", "simple")
+@set_property("arm", True)
 def first_location_of_maximum(x):
     """
     Returns the first location of the maximum value of x.
@@ -897,6 +908,7 @@ def first_location_of_maximum(x):
 
 
 @set_property("fctype", "simple")
+@set_property("arm", True)
 def last_location_of_minimum(x):
     """
     Returns the last location of the minimal value of x.
@@ -912,6 +924,7 @@ def last_location_of_minimum(x):
 
 
 @set_property("fctype", "simple")
+@set_property("arm", True)
 def first_location_of_minimum(x):
     """
     Returns the first location of the minimal value of x.
@@ -1192,6 +1205,7 @@ def fft_aggregated(x, param):
 
 
 @set_property("fctype", "simple")
+@set_property("arm", True)
 def number_peaks(x, n):
     """
     Calculates the number of peaks of at least support n in the time series x. A peak of support n is defined as a
@@ -1232,6 +1246,7 @@ def number_peaks(x, n):
 
 
 @set_property("fctype", "combiner")
+@set_property("arm", True)
 def index_mass_quantile(x, param):
     """
     Those apply features calculate the relative index i where q% of the mass of the time series x lie left of i.
@@ -1592,6 +1607,7 @@ def binned_entropy(x, max_bins):
 # todo - check if vectorizable
 @set_property("high_comp_cost", True)
 @set_property("fctype", "simple")
+@set_property("arm", True)
 def sample_entropy(x):
     """
     Calculate and return sample entropy of x.
@@ -1706,6 +1722,7 @@ def quantile(x, q):
 
 
 @set_property("fctype", "simple")
+@set_property("arm", True)
 def number_crossing_m(x, m):
     """
     Calculates the number of crossings of x on m. A crossing is defined as two sequential values where the first value
